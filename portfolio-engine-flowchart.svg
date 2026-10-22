@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1080" viewBox="0 0 1400 1080">
+<defs>
+  <style>
+    .bg{fill:#f8fafc}.title{font:700 30px Arial;fill:#0f172a}.sub{font:400 16px Arial;fill:#475569}
+    .box{fill:#fff;stroke:#64748b;stroke-width:2;rx:14}.input{fill:#e0f2fe;stroke:#0284c7}.calc{fill:#ede9fe;stroke:#7c3aed}
+    .decision{fill:#fef3c7;stroke:#d97706}.output{fill:#dcfce7;stroke:#16a34a}.error{fill:#fee2e2;stroke:#dc2626}
+    .h{font:700 17px Arial;fill:#0f172a;text-anchor:middle}.t{font:400 14px Arial;fill:#334155;text-anchor:middle}
+    .edge{fill:none;stroke:#475569;stroke-width:2.5;marker-end:url(#arrow)}.label{font:700 13px Arial;fill:#475569}
+  </style>
+  <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+    <path d="M0,0 L12,6 L0,12 z" fill="#475569"/>
+  </marker>
+</defs>
+<rect class="bg" width="1400" height="1080"/>
+<text class="title" x="700" y="45" text-anchor="middle">Portfolio Risk Engine</text>
+<text class="sub" x="700" y="72" text-anchor="middle">From editable inputs and monthly prices to a mandate-compliant minimum-risk mix</text>
+
+<rect class="box input" x="80" y="110" width="360" height="90"/>
+<text class="h" x="260" y="142">Meridian inputs</text>
+<text class="t" x="260" y="167">Returns, volatilities, correlations</text>
+<text class="t" x="260" y="188">Objective and reserve-eligible assets</text>
+
+<rect class="box input" x="960" y="110" width="360" height="90"/>
+<text class="h" x="1140" y="142">Monthly adjusted-close CSV</text>
+<text class="t" x="1140" y="167">Date first · oldest month first</text>
+<text class="t" x="1140" y="188">All months or last 36 returns</text>
+
+<rect class="box calc" x="960" y="250" width="360" height="110"/>
+<text class="h" x="1140" y="282">Estimate historical inputs</text>
+<text class="t" x="1140" y="307">Return = monthly mean × 12</text>
+<text class="t" x="1140" y="329">Volatility = monthly SD × √12</text>
+<text class="t" x="1140" y="351">Calculate correlations</text>
+
+<rect class="box decision" x="500" y="250" width="400" height="110"/>
+<text class="h" x="700" y="285">Validate correlation table</text>
+<text class="t" x="700" y="312">Every value must be between −1 and +1</text>
+<text class="t" x="700" y="337">Table must be symmetric</text>
+
+<rect class="box error" x="80" y="270" width="300" height="70"/>
+<text class="h" x="230" y="300">Invalid input</text>
+<text class="t" x="230" y="325">Stop with a clear message</text>
+
+<rect class="box calc" x="500" y="420" width="400" height="90"/>
+<text class="h" x="700" y="454">Build covariance matrix</text>
+<text class="t" x="700" y="482">correlation × left volatility × right volatility</text>
+
+<rect class="box calc" x="80" y="570" width="370" height="120"/>
+<text class="h" x="265" y="603">Tuesday baselines</text>
+<text class="t" x="265" y="630">Benchmark · equal weight</text>
+<text class="t" x="265" y="653">Inverse volatility</text>
+<text class="t" x="265" y="676">Return · risk · reserve · objective verdict</text>
+
+<rect class="box calc" x="515" y="570" width="370" height="120"/>
+<text class="h" x="700" y="603">Search 5-point mixes</text>
+<text class="t" x="700" y="630">Long-only weights total 100%</text>
+<text class="t" x="700" y="653">Keep mixes meeting return and reserve rules</text>
+<text class="t" x="700" y="676">Retain the lowest-volatility mix</text>
+
+<rect class="box decision" x="950" y="570" width="370" height="120"/>
+<text class="h" x="1135" y="603">Any feasible mix?</text>
+<text class="t" x="1135" y="638">Yes → return the best mix</text>
+<text class="t" x="1135" y="665">No → “No mix meets the objective”</text>
+
+<rect class="box output" x="350" y="780" width="700" height="120"/>
+<text class="h" x="700" y="814">Streamlit app</text>
+<text class="t" x="700" y="842">Editable expected returns · reserve checkboxes · objective · reserve minimum</text>
+<text class="t" x="700" y="867">Current answer beside inputs-as-loaded answer</text>
+<text class="t" x="700" y="890">Report the largest weight change in percentage points</text>
+
+<rect class="box output" x="500" y="960" width="400" height="75"/>
+<text class="h" x="700" y="992">Client-facing result</text>
+<text class="t" x="700" y="1018">Weights · expected return · volatility · reserve weight</text>
+
+<path class="edge" d="M440 155 H700 V250"/>
+<path class="edge" d="M1140 200 V250"/>
+<path class="edge" d="M960 305 H900"/>
+<path class="edge" d="M500 305 H380"/>
+<text class="label" x="407" y="292">invalid</text>
+<path class="edge" d="M700 360 V420"/>
+<text class="label" x="714" y="393">valid</text>
+<path class="edge" d="M700 510 V540 H265 V570"/>
+<path class="edge" d="M700 510 V570"/>
+<path class="edge" d="M885 630 H950"/>
+<path class="edge" d="M1135 690 V730 H800 V780"/>
+<path class="edge" d="M265 690 V730 H600 V780"/>
+<path class="edge" d="M700 900 V960"/>
+</svg>
