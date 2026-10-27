@@ -1,0 +1,29 @@
+Decision date: 2026-03-31
+
+Row funnel
+1. No ticker (quarantined): removed 1; rows: 11
+2. Exact duplicate: removed 1; rows: 7
+3. Published after decision date: removed 3; rows: 3, 8, 10
+4. Superseded publication: removed 1; rows: 2
+
+As-of panel
+Row  Ticker  Month    Published   Price
+  1  AAA     2026-01  2026-02-10  101.0
+  4  AAA     2026-02  2026-03-25  103.0
+  5  BBB     2026-01  2026-02-10  98.0
+  6  BBB     2026-02  2026-03-10  97.0
+  9  CCC     2026-01  2026-02-10  110.0
+ 12  CCC     2026-02  2026-03-10  111.0
+
+As-of signals
+AAA: 1.98% for 2026-02
+BBB: -1.02% for 2026-02
+CCC: 0.91% for 2026-02
+
+Naive signals (publication date ignored)
+AAA: 5.83% for 2026-03
+BBB: -5.15% for 2026-03
+CCC: 1.82% for 2026-02
+
+V. Price validation
+PASS: AAA and CCC are above 100; CCC is above BBB where comparable.
