@@ -1,0 +1,14 @@
+Changed-input baseline (before)
+Input: VT annual expected-return estimate = 11.0502% per year
+Objective return floor = 6.00% per year
+Minimum reserve-eligible weight = 10.00%
+
+Lowest-volatility feasible mix
+SGOV: 65.00%
+GOVT: 0.00%
+IGIB: 0.00%
+VT: 35.00%
+Expected return: 6.32% per year (unrounded: 6.3235685078%)
+Volatility: 5.31% per year (unrounded: 5.3062268170%)
+Reserve-eligible weight: 65.00%
+Mandate verdict: MEETS both floors

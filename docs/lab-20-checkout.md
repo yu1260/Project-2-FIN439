@@ -15,7 +15,18 @@ Restored the existing portfolio app, its engine, and dependency list. Updated th
 
 ## Locked Changed-Input Record
 
-Pending student prediction written with AI closed and committed and pushed before the changed run.
+### Prediction — written before the changed run
+
+- Load-bearing input: VT annual expected-return estimate.
+- Old value: 11.0502% per year. New value: 8.0000% per year, a decrease of 3.0502 percentage points.
+- Expected movement: the optimizer will increase VT's portfolio weight and decrease SGOV's weight because each percentage point allocated to VT now contributes less expected return. The portfolio's volatility should increase and its reserve-eligible weight should decrease. The reported portfolio return should remain at or just above the 6.00% annual floor because the optimizer searches only feasible mixes on a 5-percentage-point weight grid.
+- Expected decision effect: no change. I expect a feasible mix to continue meeting both the 6.00% annual return floor and the 10.00% reserve-eligible weight floor, so the recommendation remains to allocate to the lowest-volatility feasible mix.
+
+Baseline output is preserved in [changed-input-before.txt](changed-input-before.txt). The changed case has not been run yet.
+
+### Observed result
+
+Pending the changed run after this prediction is committed and pushed.
 
 ## Committee decision
 
