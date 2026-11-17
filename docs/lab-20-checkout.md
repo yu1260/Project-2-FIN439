@@ -22,12 +22,14 @@ Restored the existing portfolio app, its engine, and dependency list. Updated th
 - Expected movement: the optimizer will increase VT's portfolio weight and decrease SGOV's weight because each percentage point allocated to VT now contributes less expected return. The portfolio's volatility should increase and its reserve-eligible weight should decrease. The reported portfolio return should remain at or just above the 6.00% annual floor because the optimizer searches only feasible mixes on a 5-percentage-point weight grid.
 - Expected decision effect: no change. I expect a feasible mix to continue meeting both the 6.00% annual return floor and the 10.00% reserve-eligible weight floor, so the recommendation remains to allocate to the lowest-volatility feasible mix.
 
-Baseline output is preserved in [changed-input-before.txt](changed-input-before.txt). The changed case has not been run yet.
+Baseline output is preserved in [changed-input-before.txt](changed-input-before.txt). This prediction was committed and pushed before the changed run in [commit 4620719](https://github.com/yu1260/Project-2-FIN439/commit/4620719).
 
 ### Observed result
 
-Pending the changed run after this prediction is committed and pushed.
+With only VT's annual expected-return estimate changed to 8.0000%, the lowest-volatility feasible mix moved from 65.00% SGOV / 35.00% VT to 45.00% SGOV / 55.00% VT. Expected return moved down from 6.32% to 6.10% per year, volatility moved up from 5.31% to 8.26% per year, and reserve-eligible weight moved down from 65.00% to 45.00%. The changed mix still meets the 6.00% annual return floor and the 10.00% reserve floor, so the decision does not change.
+
+The result matched the prediction: lowering VT's return contribution required 20 percentage points more VT to clear the return floor, which displaced 20 percentage points of SGOV. More exposure to the higher-volatility asset increased portfolio volatility and reduced the reserve weight. Nothing changed for GOVT or IGIB because the 5-percentage-point grid search still found the lowest-volatility feasible mix using only SGOV and VT. The full changed output is preserved in [changed-input-after.txt](changed-input-after.txt).
 
 ## Committee decision
 
-Pending student decision and reversal trigger.
+Allocate to the 45% SGOV / 55% VT lowest-volatility feasible mix while it meets the 6.00% annual expected-return and 10.00% reserve floors; reverse the decision if updated estimates leave no feasible mix that meets both floors.
