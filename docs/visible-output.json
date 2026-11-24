@@ -1,0 +1,183 @@
+{
+  "as_of": "2026-10-22",
+  "inputs": {
+    "last_36": false,
+    "equity_shift": 0,
+    "cost_bps": 10,
+    "reserve": 0.1,
+    "net_floor": 0.06
+  },
+  "portfolios": {
+    "Equal weight": {
+      "weights": {
+        "SGOV": 0.25,
+        "GOVT": 0.25,
+        "IGIB": 0.25,
+        "VT": 0.25
+      },
+      "gross": 0.03692795765756059,
+      "net": 0.035927957657560586,
+      "volatility": 0.06588144315783911,
+      "reserve": 0.25,
+      "failures": [
+        "Estimated net return floor"
+      ]
+    },
+    "Inverse volatility": {
+      "weights": {
+        "SGOV": 0.8492170067488557,
+        "GOVT": 0.07058838744559859,
+        "IGIB": 0.05274240071389292,
+        "VT": 0.02745220509165272
+      },
+      "gross": 0.03492353556292501,
+      "net": 0.03392353556292501,
+      "volatility": 0.013104171196509914,
+      "reserve": 0.8492170067488557,
+      "failures": [
+        "Estimated net return floor"
+      ]
+    },
+    "Policy benchmark": {
+      "weights": {
+        "SGOV": 0,
+        "GOVT": 0,
+        "IGIB": 0.4,
+        "VT": 0.6
+      },
+      "gross": 0.0698108229804139,
+      "net": 0.0688108229804139,
+      "volatility": 0.115420429083813,
+      "reserve": 0,
+      "failures": [
+        "SGOV reserve minimum"
+      ]
+    },
+    "Constrained": {
+      "weights": {
+        "SGOV": 0.65,
+        "GOVT": 0.0,
+        "IGIB": 0.0,
+        "VT": 0.35
+      },
+      "gross": 0.06323568507816277,
+      "net": 0.06223568507816277,
+      "volatility": 0.05306226817015078,
+      "reserve": 0.65,
+      "failures": []
+    }
+  },
+  "stresses": [
+    {
+      "scenario": "VT return estimate \u22121 pp",
+      "inputs": {
+        "last_36": false,
+        "equity_shift": -0.01,
+        "cost_bps": 10,
+        "reserve": 0.1,
+        "net_floor": 0.06
+      },
+      "candidate": {
+        "weights": {
+          "SGOV": 0.6,
+          "GOVT": 0.0,
+          "IGIB": 0.0,
+          "VT": 0.4
+        },
+        "gross": 0.0628715825203306,
+        "net": 0.06187158252033059,
+        "volatility": 0.0604452279672411,
+        "reserve": 0.6,
+        "failures": []
+      },
+      "max_weight_change": 0.050000000000000044,
+      "stop": false
+    },
+    {
+      "scenario": "Alternate return window",
+      "inputs": {
+        "last_36": true,
+        "equity_shift": 0,
+        "cost_bps": 10,
+        "reserve": 0.1,
+        "net_floor": 0.06
+      },
+      "candidate": {
+        "weights": {
+          "SGOV": 0.8,
+          "GOVT": 0.0,
+          "IGIB": 0.1,
+          "VT": 0.1
+        },
+        "gross": 0.06167116229894241,
+        "net": 0.060671162298942406,
+        "volatility": 0.0169262319654709,
+        "reserve": 0.8,
+        "failures": []
+      },
+      "max_weight_change": 0.24999999999999997,
+      "stop": true
+    },
+    {
+      "scenario": "Annual cost +25 bp",
+      "inputs": {
+        "last_36": false,
+        "equity_shift": 0,
+        "cost_bps": 35,
+        "reserve": 0.1,
+        "net_floor": 0.06
+      },
+      "candidate": {
+        "weights": {
+          "SGOV": 0.6,
+          "GOVT": 0.0,
+          "IGIB": 0.0,
+          "VT": 0.4
+        },
+        "gross": 0.0668715825203306,
+        "net": 0.0633715825203306,
+        "volatility": 0.0604452279672411,
+        "reserve": 0.6,
+        "failures": []
+      },
+      "max_weight_change": 0.050000000000000044,
+      "stop": false
+    },
+    {
+      "scenario": "SGOV minimum +10 pp",
+      "inputs": {
+        "last_36": false,
+        "equity_shift": 0,
+        "cost_bps": 10,
+        "reserve": 0.2,
+        "net_floor": 0.06
+      },
+      "candidate": {
+        "weights": {
+          "SGOV": 0.65,
+          "GOVT": 0.0,
+          "IGIB": 0.0,
+          "VT": 0.35
+        },
+        "gross": 0.06323568507816277,
+        "net": 0.06223568507816277,
+        "volatility": 0.05306226817015078,
+        "reserve": 0.65,
+        "failures": []
+      },
+      "max_weight_change": 0.0,
+      "stop": false
+    }
+  ],
+  "deployment": "STOP",
+  "recommendation": "Pilot with no capital",
+  "allocation_range_pct": [
+    0,
+    0
+  ],
+  "signal": {
+    "vintage": "2026-09-30",
+    "observed": "2026-09-29",
+    "yield_pct": "5.26"
+  }
+}
