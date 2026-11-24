@@ -1,0 +1,11 @@
+I recommend a paper pilot with 0% of portfolio capital. I’m asking the committee to approve two month-end reviews where I record what the app would buy and track the results without investing real money.
+
+My goal is to find the lowest-volatility portfolio across the funds in the app. The portfolio must be long-only and fully invested, hold at least 10% in SGOV, and meet an estimated annual return floor of 6%.
+
+For this review, I apply that floor after a modeled cost of 10 basis points per year. In the table, equal weight and inverse volatility both fall short of the return floor. The policy benchmark, which is 60% VT and 40% IGIB, clears the return floor but holds 0% in SGOV. The constrained portfolio passes. It holds 65% in SGOV, with a 6.22% estimated net return and 5.31% estimated annualized volatility.
+
+I tested changes to the VT return estimate, the lookback window, the annual cost, and the minimum SGOV allocation. The shorter window is what triggers my stop rule. When the model uses 36 months, it puts 10% in VT, down from 35% with the full 59-month window. That’s a 25-percentage-point change. The shorter-window portfolio still passes, but that move exceeds my proposed 15-point threshold. That’s why the app says “Stop live allocation” and why I recommend the paper pilot.
+
+During the pilot, I’d use Little Cat to monitor the 10-year Treasury yield available at each review date. For September 30, 2026, the latest yield available was 5.26%, measured on September 29. I use it as context for the bond holdings.
+
+At both month-end reviews, I’d check whether the portfolio still clears the return floor after costs, meets the SGOV minimum, and stays within the stress limits. I’d bring a live allocation proposal back for a vote only after both reviews produce feasible portfolios under all four stresses and every holding moves by less than 15 percentage points. Today, I’m asking the committee to approve the paper pilot with zero capital. Thank you.

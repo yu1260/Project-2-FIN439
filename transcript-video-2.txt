@@ -1,0 +1,13 @@
+Hello. In this video, I’ll show you Little Cat, my Streamlit app with two views. I’ll walk through how it takes the portfolio inputs, calculates a mix, and flags results that I wouldn’t use for live allocation. Then I’ll show how the interest-rate view checks what data was available on a selected date.
+
+To show how the app opens, here’s my Little Cat file. This sidebar selection controls which view Streamlit displays. Portfolio review calls the portfolio interface, and Interest rates as known then opens the historical data dashboard.
+
+The portfolio view reads the controls for the return window, the adjustment to VT’s return estimate, the annual cost, and the return and reserve floors. It sends those inputs to assess and displays the portfolios and stress results that come back.
+
+To calculate the weights and verdicts, the engine turns monthly adjusted prices into monthly returns and uses them to estimate annual return and risk. The search tries long-only, fully invested portfolios in five-percentage-point steps. It skips any mix that misses the return or reserve floor and keeps the feasible mix with the lowest estimated volatility.
+
+The evaluation function applies the same rules to the constrained portfolio, equal weight, inverse volatility, and the policy benchmark. It subtracts the modeled annual cost and lists any rule each portfolio fails. You can see those verdicts in the portfolio review.
+
+The stress test changes one input at a time and runs the optimizer again. For the alternate return window, we have 10% in VT compared with 35% in the original window. The largest move is 25 percentage points. That’s above the proposed 15-point threshold, so the app displays Stop live allocation.
+
+For interest rates, the app reads the current data from FRED and the historical version from ALFRED. The comparison table I showed in Video 1 shows what was available on the date I selected. In that video, I selected September 30, and we can see that the latest available 10-year Treasury yield was 5.26%, measured on September 29. I use that reading to monitor the bond holdings, and the optimizer gets its return estimates from the fund price data.

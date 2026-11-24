@@ -1,0 +1,15 @@
+Um, I used OpenAI Codex to help check the portfolio calculations. The analysis and decisions are mine. The project is for education and not for investment advice.
+
+When I first started, I wanted to find the lowest-risk portfolio that met my rules. As I built my project, I started asking two more questions. What information would I actually have had at that time? And how much would the portfolio change if I used a different set of historical data?
+
+Little Cat, which is the portfolio app that I made, helps answer the first question. As we can see, I set the “As known on” date to September 30, 2026.
+
+This chart helps us see that the latest 10-year Treasury yield available on that date was 5.26%, measured on September 29. This lets me see what I could have known when making a decision.
+
+One AI-assisted result I checked was the volatility of the Lab 14 benchmark. I calculated it separately and got 10.46% using a calculator. The portfolio engine also gives 10.46%. You can see where I got this number, and you can see the matching result.
+
+Now, here’s what changed my thinking. With the full window, the model puts 35% in VT, the global stock fund. With the 59 months, it puts 10% in VT. Both mixes meet the return and reserve requirements, but the stock allocation changes by 25 percentage points just from changing the data window.
+
+So I recommend a paper pilot for the next two month-end reviews. I’ll record what the app would buy and track the results without investing any money. That gives me a chance to see whether the weights are stable enough to bring back to the committee.
+
+Correction to the recording: The 59-month starting case holds 35% VT. The alternate 36-month stress case holds 10% VT. The 25-percentage-point change stated in the video is correct.
