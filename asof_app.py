@@ -134,7 +134,6 @@ def summarize(series_id: str, current: pd.Series, vintage: pd.Series) -> dict:
 
 
 def main() -> None:
-    st.set_page_config(page_title="Little Cat · As known then", page_icon="🐈", layout="wide")
     today = date.today()
     style_page()
     st.title("Interest rates, as known then.")
@@ -212,4 +211,11 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    from committee_app import render_portfolio
+
+    st.set_page_config(page_title="Little Cat · Portfolio Review", page_icon="🐈", layout="wide")
+    view = st.sidebar.radio("Dashboard", ("Portfolio review", "Interest rates as known then"))
+    if view == "Portfolio review":
+        render_portfolio()
+    else:
+        main()
